@@ -55,3 +55,12 @@ def test_delete_account(testing_client):
     """
     response = testing_client.delete('/accounts/1')
     assert response.status_code == 200
+
+def test_main_post(testing_client):
+    """
+    GIVEN a Flask application
+    WHEN the '/' page is sent to (POST)
+    THEN check the response is not valid
+    """
+    response = testing_client.post('/', json={'name': 'John Doe', 'currency': '€'})
+    assert response.status_code == 405
