@@ -15,10 +15,10 @@ permissions:
 
 jobs:
   build:
-env:
-  ENV: ghci
 
     runs-on: ubuntu-latest
+    env:
+      ENV: ghci
 
     steps:
     - uses: actions/checkout@v3
