@@ -65,6 +65,6 @@ jobs:
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: 'private-pybank-accounts'
+          app-name: 'afernandez-iebank-backend'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2FC4CAD2E62D4DE7AA0A171CCA9B96D5 }}
