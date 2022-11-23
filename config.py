@@ -14,6 +14,7 @@ class ProductionConfig(Config):
     dbhost=os.getenv('DBHOST') + ".postgres.database.azure.com",
     dbname=os.getenv('DBNAME')
     )
+
 class DevelopmentConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'postgresql://{dbuser}:{dbpass}@{dbhost}/{dbname}'.format(
     dbuser=os.getenv('DBUSER'),
@@ -21,6 +22,10 @@ class DevelopmentConfig(Config):
     dbhost=os.getenv('DBHOST'),
     dbname=os.getenv('DBNAME')
     )
-class GithubCIConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///sqlitefile.db'
     DEBUG = True
+
+class GithubCIConfig(Config):
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///test.db'
+    DEBUG = True
+
+
