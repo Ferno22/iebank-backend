@@ -14,11 +14,9 @@ if os.getenv('ENV') != 'dev':
 else:
     print("Running in development mode")
     app.config.from_object('config.DevelopmentConfig')
-
 db = SQLAlchemy(app)
 
 from iebank_api.models import Account
-
 db.create_all()
 CORS(app)
 

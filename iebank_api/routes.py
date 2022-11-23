@@ -11,6 +11,7 @@ def hello_world():
 def skull():
     return 'Hi! This is the BACKEND SKULL! 💀'
 
+
 @app.route('/accounts', methods=['POST'])
 def create_account():
     name = request.json['name']
